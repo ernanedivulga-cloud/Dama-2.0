@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Desafio de Damas - Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="auth">
+      <h2>Desafio de Damas (Demo)</h2>
+      <input id="username" placeholder="Username" />
+      <button id="btn-register">Registrar / Entrar</button>
+      <p id="auth-msg"></p>
+    </div>
+
+    <div id="lobby" style="display:none;">
+      <p>Olá, <span id="my-name"></span> — Saldo: R$ <span id="my-balance">0.00</span></p>
+      <div>
+        <input id="deposit-amount" placeholder="Valor para depositar (ex: 10.00)" />
+        <button id="btn-deposit">Criar cobrança (Pix)</button>
+      </div>
+      <hr />
+      <div>
+        <input id="stake-amount" placeholder="Stake da partida (min R$10)" />
+        <button id="btn-create-room">Criar sala</button>
+      </div>
+      <div>
+        <h3>Salas (compartilhe o link)</h3>
+        <ul id="rooms-list"></ul>
+      </div>
+      <button id="btn-withdraw">Pedir saque</button>
+      <button id="btn-logout">Logout</button>
+    </div>
+
+    <div id="game" style="display:none;">
+      <h3>Partida — Sala <span id="room-id"></span></h3>
+      <div id="board-container">
+        <canvas id="board" width="480" height="480"></canvas>
+      </div>
+      <div>
+        <button id="btn-resign">Desistir</button>
+      </div>
+      <div id="game-log"></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
